@@ -49,8 +49,11 @@ export const languages = config.languages;
 export const defaultLanguage = config.defaultLanguage;
 export const namespaces = config.namespaces;
 export const defaultNamespace = config.defaultNamespace;
+export const defaultNamespace2 = config.defaultNamespace;
 
-const createI18nextLocizeInstance = (locales: any, language: string): i18n => {
+export const cookieName = config.cookieName;
+
+const createI18nextInstance = (locales: any, language: string): i18n => {
   // i18n plugins to load
   const plugins = [
     //
@@ -83,7 +86,7 @@ let globalI18nextInstance: any = null;
 
 export const i18nextInstance = (language: string, locales: object): i18n => {
   if (!globalI18nextInstance) {
-    globalI18nextInstance = createI18nextLocizeInstance(locales, language);
+    globalI18nextInstance = createI18nextInstance(locales, language);
 
     return globalI18nextInstance;
   } else {
