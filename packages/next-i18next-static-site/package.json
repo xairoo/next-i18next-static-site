@@ -1,6 +1,6 @@
 {
   "name": "next-i18next-static-site",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "i18next solution for static sites build with Next.js (static HTML export / next export)",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -13,16 +13,16 @@
     "type": "git",
     "url": "git://github.com/Xairoo/next-i18next-static-site.git"
   },
-  "author": {
-    "name": "Marcel Zurreck",
-    "email": "marcel.zurreck@gmail.com",
-    "url": "https://marcel.zurreck.com"
-  },
+  "author": "Marcel Zurreck <marcel.zurreck@gmail.com> (https://marcel.zurreck.com)",
   "keywords": [
     "nextjs",
-    "authentication",
-    "jwt",
-    "static-site"
+    "i18n",
+    "i18next",
+    "react-i18next",
+    "locale",
+    "translation",
+    "static-site",
+    "ssg"
   ],
   "scripts": {
     "build": "rm -rf dist && mkdir dist && tsup src/index.tsx --format esm,cjs --dts --external react",
@@ -46,5 +46,9 @@
     "next": "^13.0.0",
     "react-i18next": "^11.18.6",
     "tsup": "^6.3.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/Xairoo/next-i18next-static-site/issues"
+  },
+  "homepage": "https://github.com/Xairoo/next-i18next-static-site#readme"
 }
