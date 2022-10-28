@@ -23,7 +23,10 @@ export default function Home() {
           Hello{" "}
           <strong title={t("nameTitle")}>{{ name: "Mike" } as any}</strong>, you
           have {{ count }} unread message.{" "}
-          <LinkText href="/second-page">Go to the second page</LinkText>.
+          <LinkText href={`${i18n.language}/second-page`}>
+            Go to the second page
+          </LinkText>
+          .
         </Trans>
       </blockquote>
       <p>
