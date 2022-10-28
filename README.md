@@ -1,0 +1,1 @@
+packages/next-i18next-static-site/README.md

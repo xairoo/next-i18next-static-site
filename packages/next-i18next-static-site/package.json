@@ -1,0 +1,50 @@
+{
+  "name": "next-i18next-static-site",
+  "version": "0.2.1",
+  "description": "i18next solution for static sites build with Next.js (static HTML export / next export)",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "license": "MIT",
+  "files": [
+    "dist/**"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Xairoo/next-i18next-static-site.git"
+  },
+  "author": {
+    "name": "Marcel Zurreck",
+    "email": "marcel.zurreck@gmail.com",
+    "url": "https://marcel.zurreck.com"
+  },
+  "keywords": [
+    "nextjs",
+    "authentication",
+    "jwt",
+    "static-site"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && mkdir dist && tsup src/index.tsx --format esm,cjs --dts --external react",
+    "dev": "tsup src/index.tsx --format esm,cjs --watch --dts",
+    "lint": "TIMING=1 eslint \"**/*.ts*\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.37",
+    "@types/react-dom": "^17.0.11",
+    "eslint": "^7.32.0",
+    "eslint-config-custom": "*",
+    "tsconfig": "*",
+    "typescript": "^4.5.2"
+  },
+  "dependencies": {
+    "@types/js-cookie": "^3.0.2",
+    "i18next": "^21.10.0",
+    "js-cookie": "^3.0.1",
+    "react": "^18.2.0",
+    "next": "^13.0.0",
+    "react-i18next": "^11.18.6",
+    "tsup": "^6.3.0"
+  }
+}

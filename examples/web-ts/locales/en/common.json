@@ -1,0 +1,12 @@
+{
+  "site": "Site",
+  "language": "Language",
+  "de": "Deutsch",
+  "en": "English",
+  "Home": "Home",
+  "Second Page": "Second Page",
+  "transComponentExample": "This is a <1>react-i18next</1> <3>Trans</3> component example.",
+  "nameTitle": "This is your name",
+  "userMessagesUnread_one": "Hello <1>{{name}}</1>, you have {{count}} unread message. <7>Go to the second page</7>.",
+  "userMessagesUnread_other": "Hello <1>{{name}}</1>, you have {{count}} unread messages. <7>Go to the second page</7>."
+}
