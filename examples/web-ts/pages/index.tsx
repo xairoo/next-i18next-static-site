@@ -24,7 +24,7 @@ export default function Home() {
     } else {
       router.push("/" + i18n.language);
     }
-  }, [router, cookieName, i18n.language]);
+  }, [router, i18n.language]);
 
   return null;
 }

@@ -50,7 +50,6 @@ export const defaultLanguage = config.defaultLanguage;
 export const namespaces = config.namespaces;
 export const defaultNamespace = config.defaultNamespace;
 export const defaultNamespace2 = config.defaultNamespace;
-
 export const cookieName = config.cookieName;
 
 const createI18nextInstance = (locales: any, language: string): i18n => {
@@ -139,19 +138,19 @@ export const I18nProvider = (props: any) => {
 
     // Required to display the updated translations
     i18n.changeLanguage(language);
-  }, [props.i18n.locales]);
+  }, [i18n, language, props.i18n.locales]);
 
   useEffect(() => {
     loaded = true;
     i18n.changeLanguage(language);
-  }, [language]);
+  }, [i18n, language]);
 
   useEffect(() => {
     const hasWindow = typeof window !== "undefined";
     if (hasWindow && options.allowHydration) {
       setHydration(true);
     }
-  }, []);
+  }, [options.allowHydration]);
 
   return hydration ? props.children : null;
 };
