@@ -3,7 +3,7 @@
   <p>i18next solution for static sites build with Next.js (static HTML export / <code>next export</code>).</p>
 </div>
 
-## i18n solution for Next.js
+## i18next solution for Next.js
 
 This package brings you `react-i18next` and `i18next` to your static sites build with the `next export` future from Next.js.
 
@@ -97,4 +97,4 @@ export default App;
 
 Now you are able to use `useTranslation`, `withTranslation`, `Translation` and `Trans` directly from `react-i18next` or from `next-i18next-static-site`.
 
-> The [example Next.js site](https://github.com/xairoo/next-i18next-static-site/tree/main/apps/web) provides a `Link` and `LinkText` (used for `Trans`) component and als a custom `404` page.
+> The [example Next.js site](https://github.com/xairoo/next-i18next-static-site/tree/main/apps/web-ts) provides a `Link` and `LinkText` (used for `Trans`) component and als a custom `404` page.
