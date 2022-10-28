@@ -1,0 +1,14 @@
+{
+  "git": {
+    "commitMessage": "chore: release v${version}"
+  },
+  "github": {
+    "release": false
+  },
+  "npm": {
+    "release": false
+  },
+  "hooks": {
+    "after:bump": "npm run build"
+  }
+}
