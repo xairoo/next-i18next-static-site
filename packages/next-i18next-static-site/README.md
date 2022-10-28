@@ -3,24 +3,18 @@
   <p>i18next solution for static sites build with Next.js (static HTML export / <code>next export</code>).</p>
 </div>
 
-## i18next solution for Next.js
-
 This package brings you `react-i18next` and `i18next` to your static sites build with the `next export` future from Next.js.
 
 - 🗲 Translation is already rendered (SSG), client will receive the final translated site.
-- 🚀 Automatic browser language detection.
-- 🍪 Cookie stores the client language.
 - 🔥 Hot reload works also when you update your locale (translation) files.
+- 🚀 Automatic browser language detection can be realized.
+- 🍪 Cookie stores the client language.
 
 ## Installation
 
 ```
 npm install --save next-i18next-static-site
 ```
-
-## Configuration
-
-You have to add a few environment variables to your `next.config.js`.
 
 ## Usage
 
@@ -98,3 +92,7 @@ export default App;
 Now you are able to use `useTranslation`, `withTranslation`, `Translation` and `Trans` directly from `react-i18next` or from `next-i18next-static-site`.
 
 > The [example Next.js site](https://github.com/xairoo/next-i18next-static-site/tree/main/apps/web-ts) provides a `Link` and `LinkText` (used for `Trans`) component and als a custom `404` page.
+
+### Language detection
+
+Please check the example [pages/index.tsx](https://github.com/xairoo/next-i18next-static-site/blob/main/examples/web-ts/pages/index.tsx). It contains a simple language detection and redirect solution.
