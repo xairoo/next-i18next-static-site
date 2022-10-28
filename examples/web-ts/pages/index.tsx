@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-import { useTranslation } from "next-i18next-static-site";
+import { cookieName, useTranslation } from "next-i18next-static-site";
 import Cookies from "js-cookie";
 
 export default function Home() {
@@ -8,7 +8,7 @@ export default function Home() {
   const router = useRouter();
 
   useEffect(() => {
-    const cookieLocale = Cookies.get("locale");
+    const cookieLocale = Cookies.get(cookieName);
 
     let browserLocale =
       navigator.languages && navigator.languages.length
@@ -24,7 +24,7 @@ export default function Home() {
     } else {
       router.push("/" + i18n.language);
     }
-  }, [router, i18n.language]);
+  }, [router, cookieName, i18n.language]);
 
   return null;
 }
