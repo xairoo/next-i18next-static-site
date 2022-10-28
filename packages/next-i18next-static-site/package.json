@@ -1,6 +1,6 @@
 {
   "name": "next-i18next-static-site",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "i18next solution for static sites build with Next.js (static HTML export / next export)",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
