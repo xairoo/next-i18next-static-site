@@ -1,6 +1,14 @@
 <div align="center">
   <h1>next-i18next-static-site</h1>
   <p>i18next solution for static sites build with Next.js (static HTML export / <code>next export</code>).</p>
+  <p>
+    <a href="https://packagequality.com/#?package=next-i18next-static-site">
+      <img src="https://packagequality.com/shield/next-i18next-static-site.svg"/>
+    </a>
+    <a href="https://www.npmjs.com/package/next-i18next-static-site">
+      <img src="https://img.shields.io/github/v/release/xairoo/next-i18next-static-site?label=latest" alt="Github Stable Release" />
+    </a>
+  </p>
 </div>
 
 This package brings you `react-i18next` and `i18next` to your static sites build with the `next export` future from Next.js.
