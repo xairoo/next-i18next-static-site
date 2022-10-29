@@ -2,6 +2,9 @@
   <h1>next-i18next-static-site</h1>
   <p>i18next solution for static sites build with Next.js (static HTML export / <code>next export</code>).</p>
   <p>
+    <a href="https://bundlephobia.com/package/next-i18next-static-site@latest">
+      <img src="https://badgen.net/bundlephobia/minzip/next-i18next-static-site"/>
+    </a>
     <a href="https://packagequality.com/#?package=next-i18next-static-site">
       <img src="https://packagequality.com/shield/next-i18next-static-site.svg"/>
     </a>
