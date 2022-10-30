@@ -19,12 +19,15 @@
   },
   "author": "Marcel Zurreck <marcel.zurreck@gmail.com> (https://marcel.zurreck.com)",
   "keywords": [
+    "next",
     "nextjs",
     "i18n",
     "i18next",
     "react-i18next",
-    "locale",
     "translation",
+    "localisation",
+    "localization",
+    "locale",
     "static-site",
     "ssg"
   ],
