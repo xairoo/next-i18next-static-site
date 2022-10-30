@@ -166,3 +166,31 @@ export function getAllLanguageSlugs() {
 export function getLanguage(lang: string) {
   return config.languages.includes(lang) ? lang : config.defaultLanguage;
 }
+
+// Language detection and redirect
+export const languageDetection = () => {
+  const router = useRouter();
+
+  useEffect(() => {
+    let cookieLocale: string | undefined = Cookies.get(cookieName) || undefined;
+
+    let browserLocale: string | undefined =
+      (navigator.languages && navigator.languages.length
+        ? navigator.languages[0]
+        : navigator.language) || undefined;
+
+    if (browserLocale) {
+      browserLocale = browserLocale.slice(0, 2);
+    }
+
+    if (cookieLocale && languages.includes(cookieLocale)) {
+      router.push("/" + cookieLocale);
+    } else if (browserLocale && languages.includes(browserLocale)) {
+      router.push("/" + browserLocale);
+    } else {
+      router.push("/" + defaultLanguage);
+    }
+  }, [router, defaultLanguage]);
+
+  return null;
+};

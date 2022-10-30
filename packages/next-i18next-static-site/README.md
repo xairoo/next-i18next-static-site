@@ -106,4 +106,15 @@ Now you are able to use `useTranslation`, `withTranslation`, `Translation` and `
 
 ### Language detection
 
-Please check the example [pages/index.tsx](https://github.com/xairoo/next-i18next-static-site/blob/main/examples/web-ts/pages/index.tsx). It contains a simple language detection and redirect solution.
+Your `pages/index.js` can use the default `languageDetection()` function to redirect the user based on the browser locale or stored cookie:
+
+```js
+import { languageDetection } from "next-i18next-static-site";
+
+export default function Home() {
+  languageDetection();
+}
+```
+
+> Custom language detection needed?  
+> Have a look at the `languageDetection()` function: [code](https://github.com/xairoo/next-i18next-static-site/blob/main/packages/next-i18next-static-site/src/index.tsx)
