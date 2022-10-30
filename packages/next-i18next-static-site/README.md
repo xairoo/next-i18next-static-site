@@ -46,11 +46,11 @@ Add your locales like that:
 
 ```
 📦project
- ┣ 📂locales
- ┃ ┣ 📂de
- ┃ ┃ ┣ 📜common.json
- ┃ ┗ 📂en
- ┃ ┃ ┣ 📜common.json
+ ┗ 📂locales
+    ┣ 📂de
+    ┃  ┗ 📜common.json
+    ┗ 📂en
+       ┗ 📜common.json
 ```
 
 > The locales folder structure could be changed, just update the locales loader to match your custom structure
@@ -117,4 +117,4 @@ export default function Home() {
 ```
 
 > Custom language detection needed?  
-> Have a look at the `languageDetection()` function: [code](https://github.com/xairoo/next-i18next-static-site/blob/main/packages/next-i18next-static-site/src/index.tsx)
+> Have a look at the [`languageDetection()`](https://github.com/xairoo/next-i18next-static-site/blob/main/packages/next-i18next-static-site/src/index.tsx) function.
