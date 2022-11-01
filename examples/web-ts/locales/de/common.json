@@ -8,5 +8,7 @@
   "transComponentExample": "Dies ist ein <1>react-i18next</1> <3>Trans</3> Komponenten Beispiel.",
   "nameTitle": "This is your name",
   "userMessagesUnread_one": "Hallo <2>{{name}}</2>, du hast {{count}} ungelesene Nachricht. <7>Gehe auf die zweite Seite</7>.",
-  "userMessagesUnread_other": "Hallo <2>{{name}}</2>, du hast {{count}} ungelesene Nachrichten. <7>Gehe auf die zweite Seite</7>."
+  "userMessagesUnread_other": "Hallo <2>{{name}}</2>, du hast {{count}} ungelesene Nachrichten. <7>Gehe auf die zweite Seite</7>.",
+  "Message count +": "Anzahl Nachrichten +",
+  "Message count -": "Anzahl Nachrichten -"
 }

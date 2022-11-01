@@ -30,8 +30,12 @@ export default function Home() {
         </Trans>
       </blockquote>
       <p>
-        <button onClick={() => setCount(count + 1)}>Message count +</button>
-        <button onClick={() => setCount(count - 1)}>Message count -</button>
+        <button onClick={() => setCount(count + 1)}>
+          {t("Message count +")}
+        </button>
+        <button onClick={() => setCount(count - 1)}>
+          {t("Message count -")}
+        </button>
       </p>
     </div>
   );
