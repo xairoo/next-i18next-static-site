@@ -1,0 +1,10 @@
+.flex {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.underline {
+  text-decoration: underline;
+}

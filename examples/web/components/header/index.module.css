@@ -1,0 +1,13 @@
+.header {
+  padding: 15px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  white-space: nowrap;
+}
