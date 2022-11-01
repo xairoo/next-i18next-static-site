@@ -17,7 +17,7 @@
 This package brings you `react-i18next` and `i18next` to your static sites build with the `next export` future from Next.js.
 
 - 🗲 Translation is already rendered (SSG), client will receive the final translated site.
-- 🔥 Hot reload works also when you update your locale (translation) files.
+- 🔥 Hot reloading works also when you update your locale (translation) files.
 - 🚀 Automatic browser language detection can be realized.
 - 🍪 Cookie stores the client language.
 
@@ -55,19 +55,13 @@ Add your locales like that:
 
 > The locales folder structure could be changed, just update the locales loader to match your custom structure
 
-Finally implement the locales loader and the `I18nProvider` like this in your `_app.js`:
+Load the locales:
 
 ```js
-import {
-  I18nProvider,
-  languages,
-  defaultLanguage,
-  namespaces,
-  defaultNamespace,
-} from "next-i18next-static-site";
+// lib/locales.js
+import { languages, namespaces } from "next-i18next-static-site";
 
-// Load all locales, required for next-i18next-static-site
-export const locales = {};
+const locales = {};
 languages.map((language) => {
   locales[language] = {};
 
@@ -79,6 +73,23 @@ languages.map((language) => {
       ".json");
   });
 });
+
+export default locales;
+```
+
+Finally implement the locales loader and the `I18nProvider` like this in your `_app.js`:
+
+```js
+import {
+  I18nProvider,
+  languages,
+  defaultLanguage,
+  namespaces,
+  defaultNamespace,
+} from "next-i18next-static-site";
+
+// Locales loader
+import locales from "../lib/locales";
 
 const App = function ({ Component, pageProps }) {
   // i18n options

@@ -6,26 +6,12 @@ import {
   namespaces,
   defaultNamespace,
 } from "next-i18next-static-site";
+
+// Locales loader
+import locales from "../lib/locales";
+
 import Header from "../components/header";
 import "./styles.css";
-
-interface locales {
-  [key: string]: any;
-}
-
-// Load all locales, required for next-i18n-static-site
-export const locales: locales = {};
-languages.map((language) => {
-  locales[language] = {};
-
-  namespaces.map((namespace) => {
-    locales[language][namespace] = require("./../locales/" +
-      language +
-      "/" +
-      namespace +
-      ".json");
-  });
-});
 
 const App = function ({ Component, pageProps }: AppProps) {
   // i18n options
@@ -35,7 +21,6 @@ const App = function ({ Component, pageProps }: AppProps) {
     namespaces,
     defaultNamespace,
     locales,
-    // allowHydration: true, // Defaults to `true`
   };
 
   return (
