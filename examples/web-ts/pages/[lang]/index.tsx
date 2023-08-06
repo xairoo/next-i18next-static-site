@@ -7,6 +7,10 @@ import {
 } from "next-i18next-static-site";
 import { LinkText } from "../../components/link";
 
+// Just for printing versions
+import getConfig from "next/config";
+const { publicRuntimeConfig } = getConfig();
+
 export default function Home() {
   const { t, i18n } = useTranslation();
 
@@ -37,6 +41,14 @@ export default function Home() {
           {t("Message count -")}
         </button>
       </p>
+      <pre>
+        Example name: {publicRuntimeConfig?.packageJSON.name}
+        {"\n"}
+        Example version: {publicRuntimeConfig?.packageJSON.version}
+        {"\n"}
+        Next.js version: {publicRuntimeConfig?.packageJSON.dependencies.next}
+        {"\n"}
+      </pre>
     </div>
   );
 }
