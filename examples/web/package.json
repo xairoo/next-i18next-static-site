@@ -6,13 +6,13 @@
     "dev": "next dev -p 3000",
     "build": "next build",
     "start": "next start",
-    "export": "next build && next export",
+    "export": "npm run build --prefix ../../packages/next-i18next-static-site/ && next build && next export",
     "serve": "serve out",
     "lint": "next lint"
   },
   "dependencies": {
     "cookie-cutter": "^0.2.0",
-    "next": "13.0.0",
+    "next": "13.3.4",
     "next-i18next-static-site": "*",
     "react": "18.2.0",
     "react-dom": "18.2.0"
