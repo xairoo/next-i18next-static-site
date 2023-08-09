@@ -7,12 +7,12 @@
     "build": "next build",
     "start": "next start",
     "export": "npm run build --prefix ../../packages/next-i18next-static-site/ && next build && next export",
-    "serve": "serve out",
+    "serve": "serve out -p 3000",
     "lint": "next lint"
   },
   "dependencies": {
     "cookie-cutter": "^0.2.0",
-    "next": "13.4.10",
+    "next": "13.4.12",
     "next-i18next-static-site": "*",
     "react": "18.2.0",
     "react-dom": "18.2.0"

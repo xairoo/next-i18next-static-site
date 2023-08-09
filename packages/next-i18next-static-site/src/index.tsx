@@ -2,7 +2,7 @@ import getConfig from "next/config";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Cookies, { CookieAttributes } from "js-cookie";
-import i18next, { i18n } from "i18next";
+import i18next, { i18n, Module } from "i18next";
 import {
   initReactI18next,
   useTranslation,
@@ -59,9 +59,10 @@ const createI18nextInstance = (locales: any, language: string): i18n => {
     initReactI18next,
   ];
 
-  const i18nInstance = i18next;
-  plugins.map((plugin) => i18nInstance.use(plugin));
-  i18nInstance.init({
+  plugins.map((plugin: Module) => i18next.use(plugin));
+  plugins.map((plugin: Module) => i18next.use(plugin)); // @fix: remove in future - https://github.com/vercel/next.js/issues/53688
+
+  i18next.init({
     resources: locales,
     cleanCode: true,
     lng: language,
@@ -78,7 +79,7 @@ const createI18nextInstance = (locales: any, language: string): i18n => {
     load: "languageOnly", // Remove if you want to use localization (en-US, en-GB)
   });
 
-  return i18nInstance;
+  return i18next;
 };
 
 let globalI18nextInstance: any = null;
