@@ -11,9 +11,6 @@
     "build:examples": "npm-run-all -s build:example:*",
     "build:example:web": "cd examples/web && npm run build",
     "build:example:web-ts": "cd examples/web-ts && npm run build",
-    "export:examples": "npm-run-all -s export:example:*",
-    "export:example:web": "cd examples/web && npm run export",
-    "export:example:web-ts": "cd examples/web-ts && npm run export",
     "serve:examples": "npm-run-all -s --parallel serve:example:*",
     "serve:example:web": "cd examples/web && npm run serve",
     "serve:example:web-ts": "cd examples/web-ts && npm run serve",
@@ -25,7 +22,7 @@
     "eslint-config-custom": "*",
     "npm-run-all": "^4.1.5",
     "prettier": "^3.0.1",
-    "turbo": "^1.10.12"
+    "turbo": "^1.11.2"
   },
   "engines": {
     "node": ">=16.17.0"

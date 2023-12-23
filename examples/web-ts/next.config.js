@@ -9,4 +9,5 @@ module.exports = withTM({
     i18n,
     packageJSON,
   },
+  output: "export",
 });

@@ -12,10 +12,10 @@
   },
   "dependencies": {
     "cookie-cutter": "^0.2.0",
-    "next": "13.4.12",
+    "next": "^14.0.4",
     "next-i18next-static-site": "*",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.22.9",

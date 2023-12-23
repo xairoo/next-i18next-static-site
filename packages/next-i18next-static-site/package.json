@@ -44,22 +44,22 @@
     "@types/react-dom": "^18.2.7",
     "eslint": "^8.46.0",
     "eslint-config-custom": "*",
-    "i18next": "^23.4.2",
+    "i18next": "^23.7.11",
     "js-cookie": "^3.0.5",
-    "next": "^13.4.13",
+    "next": "^14.0.4",
     "react": "^18.2.0",
-    "react-i18next": "^13.0.3",
+    "react-i18next": "^13.5.0",
     "release-it": "^16.1.3",
     "tsconfig": "*",
     "tsup": "^7.2.0",
     "typescript": "^5.1.6"
   },
   "peerDependencies": {
-    "i18next": "^23.4.1",
+    "i18next": "^23.7.11",
     "js-cookie": "^3.0.1",
-    "next": "^13.4.13",
-    "react": "^18.2.0",
-    "react-i18next": "^13.0.3"
+    "next": ">= 12.0.0",
+    "react": ">= 18.2.0",
+    "react-i18next": "^13.5.0"
   },
   "dependencies": {
     "js-cookie": "^3.0.1"

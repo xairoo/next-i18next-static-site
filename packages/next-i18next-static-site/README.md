@@ -130,7 +130,7 @@ export default function Home() {
 > Custom language detection needed?  
 > Have a look at the [`languageDetection()`](https://github.com/xairoo/next-i18next-static-site/blob/main/packages/next-i18next-static-site/src/index.tsx) function.
 
-## Online Example at Cloudflare Pages:
+## Online Demo at Cloudflare Pages:
 
 https://next-i18next-static-site.pages.dev/de  
 Source: [examples/web](https://github.com/xairoo/next-i18next-static-site/tree/main/examples/web)
