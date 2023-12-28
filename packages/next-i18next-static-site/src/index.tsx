@@ -1,4 +1,3 @@
-import getConfig from "next/config";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Cookies, { CookieAttributes } from "js-cookie";
@@ -14,7 +13,44 @@ import {
 // Translation exports from react-i18next
 export { useTranslation, withTranslation, Translation, Trans };
 
-const { publicRuntimeConfig } = getConfig();
+interface Env {
+  languages: string[];
+  defaultLanguage: string;
+  namespaces: string[];
+  defaultNamespace: string;
+}
+
+let env: Env = {
+  languages: ["en"],
+  defaultLanguage: "en",
+  namespaces: ["common"],
+  defaultNamespace: "common",
+};
+
+try {
+  if (process.env.NEXT_PUBLIC_I18N_LANGUAGES) {
+    env.languages = JSON.parse(process.env.NEXT_PUBLIC_I18N_LANGUAGES);
+  } else {
+    throw new Error("NEXT_PUBLIC_I18N_LANGUAGES not set");
+  }
+  if (process.env.NEXT_PUBLIC_I18N_DEFAULT_LANGUAGE) {
+    env.defaultLanguage = process.env.NEXT_PUBLIC_I18N_DEFAULT_LANGUAGE;
+  } else {
+    throw new Error("NEXT_PUBLIC_I18N_DEFAULT_LANGUAGE not set");
+  }
+  if (process.env.NEXT_PUBLIC_I18N_NAMESPACES) {
+    env.namespaces = JSON.parse(process.env.NEXT_PUBLIC_I18N_NAMESPACES);
+  } else {
+    throw new Error("NEXT_PUBLIC_I18N_NAMESPACES not set");
+  }
+  if (process.env.NEXT_PUBLIC_I18N_DEFAULT_NAMESPACE) {
+    env.defaultNamespace = process.env.NEXT_PUBLIC_I18N_DEFAULT_NAMESPACE;
+  } else {
+    throw new Error("NEXT_PUBLIC_I18N_DEFAULT_NAMESPACE not set");
+  }
+} catch (err) {
+  console.log(err);
+}
 
 interface Config {
   languages: string[];
@@ -39,10 +75,10 @@ const defaultConfig = {
 
 const config: Config = {
   ...defaultConfig,
-  languages: publicRuntimeConfig.i18n.languages,
-  defaultLanguage: publicRuntimeConfig.i18n.defaultLanguage,
-  namespaces: publicRuntimeConfig.i18n.namespaces,
-  defaultNamespace: publicRuntimeConfig.i18n.defaultNamespace,
+  languages: env.languages,
+  defaultLanguage: env.defaultLanguage,
+  namespaces: env.namespaces,
+  defaultNamespace: env.defaultNamespace,
 };
 
 export const languages = config.languages;

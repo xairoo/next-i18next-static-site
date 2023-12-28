@@ -7,10 +7,6 @@ import {
 } from "next-i18next-static-site";
 import { LinkText } from "../../components/link";
 
-// Just for printing versions
-import getConfig from "next/config";
-const { publicRuntimeConfig } = getConfig();
-
 export default function Home() {
   const { t, i18n } = useTranslation();
 
@@ -42,11 +38,11 @@ export default function Home() {
         </button>
       </p>
       <pre>
-        Example name: {publicRuntimeConfig?.packageJSON.name}
+        Example name: {process.env.NEXT_PUBLIC_EXAMPLE_NAME}
         {"\n"}
-        Example version: {publicRuntimeConfig?.packageJSON.version}
+        Example version: {process.env.NEXT_PUBLIC_EXAMPLE_VERSION}
         {"\n"}
-        Next.js version: {publicRuntimeConfig?.packageJSON.dependencies.next}
+        Next.js version: {process.env.NEXT_PUBLIC_NEXT_VERSION}
         {"\n"}
       </pre>
     </div>

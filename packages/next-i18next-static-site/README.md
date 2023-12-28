@@ -29,17 +29,31 @@ npm install --save next-i18next-static-site
 
 ## Usage
 
-Set the supported languages and the namespaces in your `next.config.js`:
+> `publicRuntimeConfig` is deprecated by Next.js.  
+> We have moved the configuration for `next-i18next-static-site` to environment variables.
+
+Set the supported languages and the namespaces in your `next.config.js` or in your `.env.local`:
+
+### `next.config.js` Example
 
 ```js
-publicRuntimeConfig: {
-  i18n: {
-    languages: ["en", "de"],
-    defaultLanguage: "en",
-    namespaces: ["common", "meta", "error"],
-    defaultNamespace: "common",
-  },
-}
+env: {
+  NEXT_PUBLIC_I18N_LANGUAGES: '["en", "de"]',
+  NEXT_PUBLIC_I18N_DEFAULT_LANGUAGE: "en",
+  NEXT_PUBLIC_I18N_NAMESPACES: '["common", "meta", "error"]',
+  NEXT_PUBLIC_I18N_DEFAULT_NAMESPACE: "common",
+},
+```
+
+Arrays have to be a string within `next.config.js`, just put them into brackets.
+
+### `.env.local` Example:
+
+```
+NEXT_PUBLIC_I18N_LANGUAGES=["en", "de"]
+NEXT_PUBLIC_I18N_DEFAULT_LANGUAGE=en
+NEXT_PUBLIC_I18N_NAMESPACES=["common", "meta", "error"]
+NEXT_PUBLIC_I18N_DEFAULT_NAMESPACE=common
 ```
 
 Add your locales like that:
@@ -48,9 +62,11 @@ Add your locales like that:
 📦project
  ┗ 📂locales
     ┣ 📂de
-    ┃  ┗ 📜common.json
+    ┃  ┣ 📜common.json
+    ┃  ┗ 📜...
     ┗ 📂en
-       ┗ 📜common.json
+       ┣ 📜common.json
+       ┗ 📜...
 ```
 
 > The locales folder structure could be changed, just update the locales loader to match your custom structure
