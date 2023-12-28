@@ -34,7 +34,7 @@ npm install --save next-i18next-static-site
 
 Set the supported languages and the namespaces in your `next.config.js` or in your `.env.local`:
 
-### `next.config.js` Example
+`next.config.js` example:
 
 ```js
 env: {
@@ -47,7 +47,7 @@ env: {
 
 Arrays have to be a string within `next.config.js`, just put them into brackets.
 
-### `.env.local` Example:
+`.env.local` example:
 
 ```
 NEXT_PUBLIC_I18N_LANGUAGES=["en", "de"]
