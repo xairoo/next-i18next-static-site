@@ -30,22 +30,24 @@ npm install --save next-i18next-static-site
 ## Usage
 
 > `publicRuntimeConfig` is deprecated by Next.js.  
-> We have moved the configuration for `next-i18next-static-site` to environment variables.
+> I moved the configuration for `next-i18next-static-site` to environment variables.
 
 Set the supported languages and the namespaces in your `next.config.js` or in your `.env.local`:
 
 `next.config.js` example:
 
 ```js
-env: {
-  NEXT_PUBLIC_I18N_LANGUAGES: '["en", "de"]',
-  NEXT_PUBLIC_I18N_DEFAULT_LANGUAGE: "en",
-  NEXT_PUBLIC_I18N_NAMESPACES: '["common", "meta", "error"]',
-  NEXT_PUBLIC_I18N_DEFAULT_NAMESPACE: "common",
-},
+module.exports = {
+  env: {
+    NEXT_PUBLIC_I18N_LANGUAGES: '["en", "de"]',
+    NEXT_PUBLIC_I18N_DEFAULT_LANGUAGE: "en",
+    NEXT_PUBLIC_I18N_NAMESPACES: '["common", "meta", "error"]',
+    NEXT_PUBLIC_I18N_DEFAULT_NAMESPACE: "common",
+  },
+};
 ```
 
-Arrays have to be a string within `next.config.js`, just put them into brackets.
+Arrays have to be a string within `next.config.js`, just put them into brackets, otherwise Next.js will throw an error.
 
 `.env.local` example:
 
@@ -62,11 +64,9 @@ Add your locales like that:
 📦project
  ┗ 📂locales
     ┣ 📂de
-    ┃  ┣ 📜common.json
-    ┃  ┗ 📜...
+    ┃  ┗ 📜common.json
     ┗ 📂en
-       ┣ 📜common.json
-       ┗ 📜...
+       ┗ 📜common.json
 ```
 
 > The locales folder structure could be changed, just update the locales loader to match your custom structure
@@ -146,7 +146,7 @@ export default function Home() {
 > Custom language detection needed?  
 > Have a look at the [`languageDetection()`](https://github.com/xairoo/next-i18next-static-site/blob/main/packages/next-i18next-static-site/src/index.tsx) function.
 
-## Online Demo at Cloudflare Pages:
+## Online Example at Cloudflare Pages:
 
 https://next-i18next-static-site.pages.dev/de  
 Source: [examples/web](https://github.com/xairoo/next-i18next-static-site/tree/main/examples/web)
