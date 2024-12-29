@@ -2,15 +2,9 @@
   <h1>next-i18next-static-site</h1>
   <p>i18next solution for static sites build with Next.js (static HTML export / <code>next export</code>).</p>
   <p>
-    <a href="https://bundlephobia.com/package/next-i18next-static-site@latest">
-      <img src="https://badgen.net/bundlephobia/minzip/next-i18next-static-site"/>
-    </a>
-    <a href="https://packagequality.com/#?package=next-i18next-static-site">
-      <img src="https://packagequality.com/shield/next-i18next-static-site.svg"/>
-    </a>
-    <a href="https://www.npmjs.com/package/next-i18next-static-site">
-      <img src="https://img.shields.io/github/v/release/xairoo/next-i18next-static-site?label=latest" alt="Github Stable Release" />
-    </a>
+    <a href="https://www.npmjs.com/package/next-i18next-static-site"><img src="https://img.shields.io/npm/v/next-i18next-static-site/latest?style=flat-square&label=latest%20stable" /></a>
+    <img src="https://img.shields.io/bundlephobia/minzip/next-i18next-static-site?style=flat-square" alt="npm bundle size" />
+    <img src="https://shields.io/badge/TypeScript-3178C6?logo=TypeScript&logoColor=fff&style=flat-square" alt="TypeScript" />
   </p>
 </div>
 
