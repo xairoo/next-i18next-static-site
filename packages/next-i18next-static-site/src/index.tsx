@@ -18,6 +18,7 @@ interface Env {
   defaultLanguage: string;
   namespaces: string[];
   defaultNamespace: string;
+  options?: { [key: string]: unknown };
 }
 
 let env: Env = {
@@ -48,6 +49,14 @@ try {
   } else {
     throw new Error("NEXT_PUBLIC_I18N_DEFAULT_NAMESPACE not set");
   }
+  // Custom options, e.g. { debug: true }
+  if (process.env.NEXT_PUBLIC_I18N_OPTIONS) {
+    try {
+      env.options = JSON.parse(process.env.NEXT_PUBLIC_I18N_OPTIONS);
+    } catch (err) {
+      throw new Error("NEXT_PUBLIC_I18N_OPTIONS malformed");
+    }
+  }
 } catch (err) {
   console.log(err);
 }
@@ -75,6 +84,7 @@ const defaultConfig = {
 
 const config: Config = {
   ...defaultConfig,
+  ...env.options,
   languages: env.languages,
   defaultLanguage: env.defaultLanguage,
   namespaces: env.namespaces,
@@ -99,6 +109,7 @@ const createI18nextInstance = (locales: any, language: string): i18n => {
   plugins.map((plugin: Module) => i18next.use(plugin)); // @fix: remove in future - https://github.com/vercel/next.js/issues/53688
 
   i18next.init({
+    ...config,
     resources: locales,
     cleanCode: true,
     lng: language,

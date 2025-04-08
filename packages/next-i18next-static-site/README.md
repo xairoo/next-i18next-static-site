@@ -52,6 +52,12 @@ NEXT_PUBLIC_I18N_NAMESPACES=["common", "meta", "error"]
 NEXT_PUBLIC_I18N_DEFAULT_NAMESPACE=common
 ```
 
+Additional [i18next options](https://www.i18next.com/overview/configuration-options) can be set with `NEXT_PUBLIC_I18N_OPTIONS`:
+
+```
+NEXT_PUBLIC_I18N_OPTIONS={"debug": true}
+```
+
 Add your locales like that:
 
 ```
@@ -76,11 +82,9 @@ languages.map((language) => {
   locales[language] = {};
 
   namespaces.map((namespace) => {
-    locales[language][namespace] = require("./../locales/" +
-      language +
-      "/" +
-      namespace +
-      ".json");
+    locales[language][namespace] = require(
+      "./../locales/" + language + "/" + namespace + ".json"
+    );
   });
 });
 
