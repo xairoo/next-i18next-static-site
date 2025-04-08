@@ -5,6 +5,7 @@
   "en": "English",
   "Home": "Home",
   "Second Page": "Second Page",
+  "404 Page": "404 Page",
   "transComponentExample": "This is a <1>react-i18next</1> <3>Trans</3> component example.",
   "nameTitle": "This is your name",
   "userMessagesUnread_one": "Hello <2>{{name}}</2>, you have {{count}} unread message. <7>Go to the second page</7>.",
