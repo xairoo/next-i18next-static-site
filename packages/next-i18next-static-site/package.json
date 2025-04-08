@@ -1,6 +1,6 @@
 {
   "name": "next-i18next-static-site",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "i18next solution for static sites build with Next.js (static HTML export / next export)",
   "homepage": "https://github.com/Xairoo/next-i18next-static-site",
   "bugs": {
