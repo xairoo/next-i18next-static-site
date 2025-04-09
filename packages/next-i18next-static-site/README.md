@@ -54,9 +54,14 @@ NEXT_PUBLIC_I18N_DEFAULT_NAMESPACE=common
 
 Additional [i18next options](https://www.i18next.com/overview/configuration-options) can be set with `NEXT_PUBLIC_I18N_OPTIONS`:
 
+> Note:
+> Calling functions like `parseMissingKeyHandler` won't work within the .env file, use <I18nProvider i18n={i18nOptions} /> instead. See [example](https://github.com/xairoo/next-i18next-static-site/blob/main/examples/web-ts/pages/_app.tsx).
+
 ```
 NEXT_PUBLIC_I18N_OPTIONS={"debug": true}
 ```
+
+> Adding the same option keys within <I18nProvider i18n={i18nOptions} /> will replace the values from the .env
 
 Add your locales like that:
 
@@ -131,18 +136,18 @@ Now you are able to use `useTranslation`, `withTranslation`, `Translation` and `
 
 ### Language detection
 
-Your `pages/index.js` can use the default `languageDetection()` function to redirect the user based on the browser locale or stored cookie:
+Your `pages/index.js` can use the default `useLanguageDetection()` function to redirect the user based on the browser locale or stored cookie:
 
 ```js
-import { languageDetection } from "next-i18next-static-site";
+import { useLanguageDetection } from "next-i18next-static-site";
 
 export default function Home() {
-  languageDetection();
+  useLanguageDetection();
 }
 ```
 
 > Custom language detection needed?  
-> Have a look at the [`languageDetection()`](https://github.com/xairoo/next-i18next-static-site/blob/main/packages/next-i18next-static-site/src/index.tsx) function.
+> Have a look at the [`useLanguageDetection()`](https://github.com/xairoo/next-i18next-static-site/blob/main/packages/next-i18next-static-site/src/index.tsx) function.
 
 ## Online Example at Cloudflare Pages:
 
