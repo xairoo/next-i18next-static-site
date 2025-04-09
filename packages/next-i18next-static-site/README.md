@@ -55,13 +55,13 @@ NEXT_PUBLIC_I18N_DEFAULT_NAMESPACE=common
 Additional [i18next options](https://www.i18next.com/overview/configuration-options) can be set with `NEXT_PUBLIC_I18N_OPTIONS`:
 
 > Note:
-> Calling functions like `parseMissingKeyHandler` won't work within the .env file, use <I18nProvider i18n={i18nOptions} /> instead. See [example](https://github.com/xairoo/next-i18next-static-site/blob/main/examples/web-ts/pages/_app.tsx).
+> Calling functions like `parseMissingKeyHandler` won't work within the .env file, use `<I18nProvider i18n={i18nOptions} />` instead. See [example](https://github.com/xairoo/next-i18next-static-site/blob/main/examples/web-ts/pages/_app.tsx).
 
 ```
 NEXT_PUBLIC_I18N_OPTIONS={"debug": true}
 ```
 
-> Adding the same option keys within <I18nProvider i18n={i18nOptions} /> will replace the values from the .env
+> Adding the same option keys within `<I18nProvider i18n={i18nOptions} />` will replace the values from the .env
 
 Add your locales like that:
 
