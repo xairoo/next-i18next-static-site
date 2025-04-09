@@ -15,13 +15,14 @@ export default function Home() {
   return (
     <div>
       <h1>{t("Home")}</h1>
+
       <p>
         {t("Language")}: {i18n.language.toLocaleUpperCase()}
       </p>
+
       <blockquote>
         <Trans i18nKey="userMessagesUnread" count={count}>
-          Hello{" "}
-          <strong title={t("nameTitle")}>{{ name: "Mike" } as any}</strong>, you
+          Hello <strong title={t("nameTitle")}>{{ name: "Mike" }}</strong>, you
           have {{ count }} unread message.{" "}
           <LinkText href={`${i18n.language}/second-page`}>
             Go to the second page
@@ -29,6 +30,7 @@ export default function Home() {
           .
         </Trans>
       </blockquote>
+
       <p>
         <button onClick={() => setCount(count + 1)}>
           {t("Message count +")}
@@ -37,6 +39,9 @@ export default function Home() {
           {t("Message count -")}
         </button>
       </p>
+
+      <p>parseMissingKeyHandler() test: {t("someMissingKey")}</p>
+
       <pre>
         Example name: {process.env.NEXT_PUBLIC_EXAMPLE_NAME}
         {"\n"}

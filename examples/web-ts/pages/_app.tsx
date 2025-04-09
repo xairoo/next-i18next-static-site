@@ -27,7 +27,7 @@ const App = function ({ Component, pageProps }: AppProps) {
     debug: true,
     parseMissingKeyHandler: (key: string) => {
       console.log("Parsing missing key:", key);
-      return key.toUpperCase(); // just a silly example
+      return <span className="error">{key}</span>;
     },
     missingKeyHandler: (lng: string, ns: string, key: string) => {
       console.warn(`[Missing] ${lng}:${ns}:${key}`);
