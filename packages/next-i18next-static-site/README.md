@@ -118,6 +118,14 @@ const App = function ({ Component, pageProps }) {
     namespaces,
     defaultNamespace,
     locales,
+
+    // Additional options, not required.
+    // https://www.i18next.com/overview/configuration-options
+    debug: true,
+    parseMissingKeyHandler: (key) => {
+      console.log("Parsing missing key:", key);
+      return <span className="error">{key}</span>;
+    },
   };
 
   return (
