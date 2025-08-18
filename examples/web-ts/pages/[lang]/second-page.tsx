@@ -13,13 +13,18 @@ export default function SecondPage() {
     <div>
       <h1>{t("Second Page")}</h1>
       <blockquote>
-        <Trans i18nKey="transComponentExample">
-          This is a <em>react-i18next</em>{" "}
-          <LinkText href="https://react.i18next.com/latest/trans-component">
-            Trans
-          </LinkText>{" "}
-          component example.
-        </Trans>
+        <Trans
+          i18nKey="transComponentExample"
+          components={[
+            <em key="package">react-i18next</em>,
+            <LinkText
+              key="link"
+              href="https://react.i18next.com/latest/trans-component"
+            >
+              Trans
+            </LinkText>,
+          ]}
+        />
       </blockquote>
     </div>
   );

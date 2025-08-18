@@ -24,7 +24,7 @@ const App = function ({ Component, pageProps }: AppProps) {
 
     // Additional options, not required.
     // https://www.i18next.com/overview/configuration-options
-    debug: true,
+    debug: false,
     parseMissingKeyHandler: (key: string) => {
       console.log("Parsing missing key:", key);
       return <span className="error">{key}</span>;

@@ -1,3 +1,4 @@
+import { AppProps } from "next/app";
 import {
   I18nProvider,
   languages,
@@ -12,7 +13,7 @@ import locales from "../lib/locales";
 import Header from "../components/header";
 import "./styles.css";
 
-const App = function ({ Component, pageProps }) {
+const App = function ({ Component, pageProps }: AppProps) {
   // i18n options
   const i18nOptions = {
     languages,
@@ -24,11 +25,11 @@ const App = function ({ Component, pageProps }) {
     // Additional options, not required.
     // https://www.i18next.com/overview/configuration-options
     debug: false,
-    parseMissingKeyHandler: (key) => {
+    parseMissingKeyHandler: (key: string) => {
       console.log("Parsing missing key:", key);
       return <span className="error">{key}</span>;
     },
-    missingKeyHandler: (lng, ns, key) => {
+    missingKeyHandler: (lng: string, ns: string, key: string) => {
       console.warn(`[Missing] ${lng}:${ns}:${key}`);
     },
   };
@@ -37,7 +38,10 @@ const App = function ({ Component, pageProps }) {
     <I18nProvider
       i18n={i18nOptions} /* Pass the i18n options to the i18n provider */
     >
-      <Header />
+      <Header
+        groupSlugs={pageProps.groupSlugs}
+        staticGroups={pageProps.staticGroups}
+      />
       <Component {...pageProps} />
     </I18nProvider>
   );

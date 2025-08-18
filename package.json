@@ -11,9 +11,11 @@
     "build:examples": "npm-run-all -s build:example:*",
     "build:example:web": "cd examples/web && npm run build",
     "build:example:web-ts": "cd examples/web-ts && npm run build",
+    "build:example:web-mdx-blog": "cd examples/web-mdx-blog && npm run build",
     "serve:examples": "npm-run-all -s --parallel serve:example:*",
     "serve:example:web": "cd examples/web && npm run serve",
     "serve:example:web-ts": "cd examples/web-ts && npm run serve",
+    "serve:example:web-mdx-blog": "cd examples/web-mdx-blog && npm run serve",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""

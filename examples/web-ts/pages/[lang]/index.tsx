@@ -21,14 +21,15 @@ export default function Home() {
       </p>
 
       <blockquote>
-        <Trans i18nKey="userMessagesUnread" count={count}>
-          Hello <strong title={t("nameTitle")}>{{ name: "Mike" }}</strong>, you
-          have {{ count }} unread message.{" "}
-          <LinkText href={`${i18n.language}/second-page`}>
-            Go to the second page
-          </LinkText>
-          .
-        </Trans>
+        <Trans
+          i18nKey="userMessagesUnread"
+          count={count}
+          components={[
+            <strong key="name">Mike</strong>,
+            <span key="count">{count}</span>,
+            <LinkText key="link" href={`${i18n.language}/second-page`} />,
+          ]}
+        />
       </blockquote>
 
       <p>
