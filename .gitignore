@@ -35,3 +35,4 @@ yarn-error.log*
 .turbo
 
 !/examples/*/.env.local
+!/examples/*/data/*
