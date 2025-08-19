@@ -105,30 +105,37 @@ async function init() {
     }
   }
 
+  const dataDir = path.join(process.cwd(), "data");
+
+  // Ordner erstellen, falls nicht vorhanden
+  if (!fs.existsSync(dataDir)) {
+    fs.mkdirSync(dataDir, { recursive: true });
+  }
+
   // staticGroups.json
   fs.writeFileSync(
-    path.join(process.cwd(), "data/staticGroups.json"),
+    path.join(dataDir, "staticGroups.json"),
     JSON.stringify(staticGroups),
     "utf-8"
   );
 
   // blogGroups.json
   fs.writeFileSync(
-    path.join(process.cwd(), "data/blogGroups.json"),
+    path.join(dataDir, "blogGroups.json"),
     JSON.stringify(blogGroups),
     "utf-8"
   );
 
   // slugsByLocale.json
   fs.writeFileSync(
-    path.join(process.cwd(), "data/slugsByLocale.json"),
+    path.join(dataDir, "slugsByLocale.json"),
     JSON.stringify(slugsByLocale),
     "utf-8"
   );
 
   // slugsByGroup.json
   fs.writeFileSync(
-    path.join(process.cwd(), "data/slugsByGroup.json"),
+    path.join(dataDir, "slugsByGroup.json"),
     JSON.stringify(slugsByGroup),
     "utf-8"
   );
