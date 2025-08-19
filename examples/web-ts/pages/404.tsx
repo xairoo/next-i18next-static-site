@@ -26,10 +26,12 @@ function Custom404() {
       </h1>
 
       <p>
-        <Trans i18nKey="404-goto" ns="error">
-          Site {{ asPath }} not found. Please go to our{" "}
-          <LinkText href={`/${i18n.language}`}>home</LinkText> site.
-        </Trans>
+        <Trans
+          i18nKey="404-goto"
+          ns="error"
+          values={{ asPath }}
+          components={[<LinkText key="link" href={`/${i18n.language}`} />]}
+        />
       </p>
     </>
   );

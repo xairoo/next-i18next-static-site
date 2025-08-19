@@ -159,5 +159,10 @@ export default function Home() {
 
 ## Online Example at Cloudflare Pages:
 
-https://next-i18next-static-site.pages.dev/de  
-Source: [examples/web](https://github.com/xairoo/next-i18next-static-site/tree/main/examples/web)
+- Simple example:  
+  https://next-i18next-static-site.pages.dev  
+  Source: [examples/web](https://github.com/xairoo/next-i18next-static-site/tree/main/examples/web)
+
+- MDX blog example:  
+  https://next-i18next-static-site-example-mdx-blog.pages.dev  
+  Source: [examples/web](https://github.com/xairoo/next-i18next-static-site/tree/main/examples/web-mdx-blog)
