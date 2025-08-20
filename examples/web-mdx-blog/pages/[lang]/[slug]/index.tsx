@@ -11,12 +11,22 @@ import staticGroups from "../../../data/staticGroups.json";
 import { SlugsByLocale, SlugsByGroup, PageProps } from "../../../types";
 import HelloWorld from "../../../components/helloWord";
 import T from "../../../components/t";
+import MDXBlock from "../../../components/MDXBlock";
 
-export default function Page({ content, meta }: PageProps) {
+export default function Page({
+  content,
+  meta,
+  text,
+  data,
+  mdxBlock,
+}: PageProps) {
   const components = {
     Head,
     HelloWorld,
     T,
+    MDXBlock: () => (
+      <MDXBlock content={mdxBlock} scope={{ meta, text, data }} />
+    ),
   };
 
   return (
@@ -96,6 +106,16 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     },
   });
 
+  const mdxBlockPath = path.join(
+    process.cwd(),
+    "content",
+    group,
+    `${lang}.mdx`
+  );
+  const mdxBlock = fs.existsSync(mdxBlockPath)
+    ? fs.readFileSync(mdxBlockPath, "utf-8")
+    : "";
+
   return {
     props: {
       lang,
@@ -106,6 +126,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       meta,
       text,
       data,
+      mdxBlock,
     },
   };
 };

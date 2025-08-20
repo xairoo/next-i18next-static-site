@@ -50,10 +50,18 @@ export type PageProps = {
     slug: string;
     [key: string]: string;
   };
-  text?: {
+  text: {
     [key: string]: string;
   };
-  data?: {
+  data: {
     [key: string]: string;
   };
+  mdxBlock: string;
 };
+
+export interface MdxScope {
+  text: Record<string, string>;
+  data: Record<string, string>;
+  meta: Record<string, unknown>;
+  [key: string]: unknown;
+}
