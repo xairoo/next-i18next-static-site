@@ -1,9 +1,9 @@
 const packageJSON = require("./package.json");
 
-const withTM = require("next-transpile-modules")(["next-i18next-static-site"]);
-
-module.exports = withTM({
+module.exports = {
   reactStrictMode: true,
+  output: "export",
+  transpilePackages: ["next-i18next-static-site"],
   env: {
     // Just for the example
     NEXT_PUBLIC_EXAMPLE_NAME: packageJSON.name,
@@ -11,4 +11,4 @@ module.exports = withTM({
     NEXT_PUBLIC_NEXT_VERSION: packageJSON.dependencies.next,
   },
   output: "export",
-});
+};
